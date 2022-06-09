@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/first_interface.css">
+        <link rel="icon" href="./images/logo.png">
+        <script>
+            var audio = new Audio("./sound/tap.wav");
+        </script>
+        <title>Wordle Battle</title>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="topline">
+                <img src="./images/logo.png" class="mid_logo">
+            </div>
+
+            <div class="move_center">
+                <label class="lvl">level</label>
+            </div>
+
+            <div class="move_center">
+                <div class="circle"></div>
+                <label id="user_label" class="username1">user_name</label>
+            </div>
+
+            <div class="move_center">
+                <a href="/loader/play.html"><button class="un_button move_button" id="play">PLAY</button></a>
+            </div>
+
+            <div class="move_center">
+                <a href="/loader/leaderboard.html"><button class="un_button move_button1" id="lb">LEADERBOARD</button></a>
+            </div>
+
+            <div class="move_center">
+                <button class="un_button move_button2" id="option">OPTION</button>
+            </div>
+
+        </div>
+
+        <script>
+            const username = window.localStorage.getItem('user');
+            document.getElementById('user_label').textContent = username;
+        </script>
+
+        <script>
+            var el = document.getElementById("play");
+            el.onclick = function() {
+            audio.play();
+            }
+        </script>
+
+        <script>
+            var el = document.getElementById("lb");
+            el.onclick = function() {
+            audio.play();
+            }
+        </script>
+
+        <script>
+            var el = document.getElementById("option");
+            el.onclick = function() {
+            audio.play();
+            }
+        </script>
+    </body>
+</html>

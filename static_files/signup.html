@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/signup.css">
+        <link rel="icon" href="./images/logo.png">
+        <title>Wordle Battle</title>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="topline">
+                <img src="./images/info.png" class="info">
+            </div>
+
+            <div>
+                <img src="./images/logo.png" class="logo">
+            </div>
+
+            <div class="lftfloat textright">
+                <div style="height: 25px;"></div>
+                <label for="uname" class="txtstyle">Username</label>
+                <div class="cursedspace"></div>
+                <label for="pw" class="txtstyle">Password</label>
+                <div class="cursedspace"></div>
+                <label for="pwconf" class="txtstyle">Confirm Password</label>
+            </div>
+            
+            <div class="lftfloat1">
+                <input id="txt" type="text" placeholder="Your Username..." class="txtstyle">
+                <br/>
+                <input id="pw" type="password" placeholder="Your Password..." class="txtstyle">
+                <br/>
+                <input id="cpw" type="password" placeholder="Confirm your Password..." class="txtstyle">
+            </div>
+
+            <div id="acc_status" class="font_red cursed_paragraph" hidden>Account registered!</div>
+
+            <button id="button" class="click txtstyle">Submit</button>
+
+            <script>
+                var username = document.getElementById("txt");
+                var pw = document.getElementById("pw");
+                var cpw = document.getElementById("cpw");
+
+                username.addEventListener("keypress", function(event) {
+                    if (event.key == "Enter") {
+                        pw.focus();
+                    }
+                });
+
+                pw.addEventListener("keypress", function(event) {
+                    if (event.key == "Enter") {
+                        cpw.focus();
+                    }
+                });
+
+                cpw.addEventListener("keypress", function(event) {
+                    if (event.key == "Enter") {
+                        document.getElementById("button").click();
+                    }
+                });
+            </script>
+
+            <!-- Wordle implementation -->
+            <script src="./jslib/wordlelib.js"></script>
+            <script src="./js/signup.js"></script>
+        </div>
+    </body>
+</html>
